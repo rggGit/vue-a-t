@@ -1,10 +1,11 @@
 <template lang="pug">
-  main#app
+  main#app.app(
+    :class="`app__theme--${theme}`")
     header
       h1#main-name {{ $t('app.name') }}
       p {{ $t('app.description') }}
 
-    section
+    section(@click="colorTheme")
       h2 {{ $t(`app.sections.${$route.name}.title`) }}
 
       router-view
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import store from '@/vuex/store'
 import IconSymbols from '@/assets/icon-symbols.vue'
 
 export default {
@@ -22,7 +24,15 @@ export default {
     IconSymbols
   },
   data () {
-    return {}
+    return {
+      theme: store.getters.getTheme
+    }
+  },
+  methods: {
+    colorTheme () {
+      store.commit('setDarkTheme')
+      this.theme = store.getters.getTheme
+    }
   }
 }
 </script>
