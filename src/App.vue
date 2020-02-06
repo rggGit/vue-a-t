@@ -9,11 +9,18 @@
 
       router-view
 
+    icon-symbols.hide
+
 </template>
 
 <script>
+import IconSymbols from '@/assets/icon-symbols.vue'
+
 export default {
   name: 'app',
+  components: {
+    IconSymbols
+  },
   data () {
     return {}
   }
