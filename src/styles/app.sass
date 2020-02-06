@@ -2,6 +2,7 @@
 
 @import 'reset'
 @import 'fonts/index'
+@import 'helpers/index'
 
 html,
 body,
@@ -20,3 +21,13 @@ h5,
 h6,
 strong
   font-family: 'lato-bold'
+
+.hide
+  display: none
+
+  &-accessible
+    position: absolute
+    width: 0
+
+    pointer-events: none
+    overflow: hidden
