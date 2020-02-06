@@ -3,6 +3,11 @@
 @import 'reset'
 @import 'fonts/index'
 @import 'helpers/index'
+@import 'variables/color-themes/default'
+
+html
+  @each $family in $default-theme
+    @include build-css-variables($family)
 
 html,
 body,
@@ -12,6 +17,7 @@ body,
 
 body
   font-family: 'lato-light'
+  line-height: $lineHeight
 
 h1,
 h2,
@@ -21,6 +27,17 @@ h5,
 h6,
 strong
   font-family: 'lato-bold'
+
+.app
+  color: var(--main-text-color)
+  background-color: var(--main-background-color)
+
+  &__theme
+    &--dark
+      @import 'variables/color-themes/dark'
+
+      @each $family in $dark-theme
+        @include build-css-variables($family)
 
 .hide
   display: none
