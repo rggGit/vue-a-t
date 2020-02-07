@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "Vue·EA",
+    "description": "Entrenamiento de accesibilidad con Vue",
+    "common": {
+      "open": "Abrir",
+      "close": "Cerrar",
+      "button": "Botón",
+      "loading": "Cargando...",
+      "spanish": "Español",
+      "english": "English"
+    },
+    "sections": {
+      "index": {
+        "title": "Index"
+      }
+    }
+  }
+}
