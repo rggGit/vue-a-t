@@ -1,5 +1,6 @@
 <template lang="pug">
-  main#app
+  main#app.app(
+    :class="`app__theme--${theme}`")
     header
       h1#main-name {{ $t('app.name') }}
       p {{ $t('app.description') }}
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import store from '@/vuex/store'
 import IconSymbols from '@/assets/icon-symbols.vue'
 
 export default {
@@ -21,9 +23,15 @@ export default {
   components: {
     IconSymbols
   },
+  computed: {
+    theme () {
+      return store.getters.getTheme
+    }
+  },
   data () {
     return {}
-  }
+  },
+  methods: {}
 }
 </script>
 

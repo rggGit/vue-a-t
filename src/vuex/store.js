@@ -3,13 +3,23 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const state = {}
+const state = {
+  theme: 'default'
+}
 
-const mutations = {}
+const mutations = {
+  setTheme (state, theme) {
+    state.theme = theme
+  }
+}
 
-const actions = {}
+const actions = {
+  setTheme: ({ commit }) => commit('setTheme')
+}
 
-const getters = {}
+const getters = {
+  getTheme: state => state.theme
+}
 
 export default new Vuex.Store({
   state,
