@@ -8,17 +8,13 @@ const state = {
 }
 
 const mutations = {
-  setDefaultTheme (state) {
-    state.theme = 'default'
-  },
-  setDarkTheme (state) {
-    state.theme = 'dark'
-  },
+  setTheme (state, theme) {
+    state.theme = theme
+  }
 }
 
 const actions = {
-  setDefaultTheme: ({ commit }) => commit('setDefaultTheme'),
-  setDarkTheme: ({ commit }) => commit('setDarkTheme')
+  setTheme: ({ commit }) => commit('setTheme')
 }
 
 const getters = {
