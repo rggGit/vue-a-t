@@ -1,0 +1,12 @@
+router-link.link-molecule(
+  to="path",
+  :title="text",
+  active-class="link-molecule--active"
+)
+  svg-icon-atom.link-molecule__icon(
+    v-if="icon",
+    :xlink="icon",
+    :title="iconTitle",
+    :class="{ 'link-molecule__icon--alone' : textStatus }"
+  )
+  span.link-molecule__text {{ text }}
