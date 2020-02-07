@@ -5,7 +5,7 @@
       h1#main-name {{ $t('app.name') }}
       p {{ $t('app.description') }}
 
-    section(@click="colorTheme")
+    section
       h2 {{ $t(`app.sections.${$route.name}.title`) }}
 
       router-view
@@ -23,17 +23,15 @@ export default {
   components: {
     IconSymbols
   },
-  data () {
-    return {
-      theme: store.getters.getTheme
+  computed: {
+    theme () {
+      return store.getters.getTheme
     }
   },
-  methods: {
-    colorTheme () {
-      store.commit('setDarkTheme')
-      this.theme = store.getters.getTheme
-    }
-  }
+  data () {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
