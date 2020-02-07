@@ -5,6 +5,7 @@ import IndexView from '@/components/views/index'
 Vue.use(Router)
 
 export default new Router({
+  linkExactActiveClass: '',
   routes: [
     {
       path: '/',
