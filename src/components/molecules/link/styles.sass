@@ -1,0 +1,35 @@
+.link-molecule
+  $root-node: &
+
+  display: flex
+  align-items: center
+
+  color: inherit
+  text-decoration: none
+
+  &__icon
+    margin-right: map-get($spacing, 'normal')
+
+    transition-property: fill, margin
+    transition-duration: $duration, 0s
+    transition-delay: 0s, 0s
+    transition-timing-function: $bezierEaseInOut
+
+    &--alone
+      margin-right: 0
+      transition-delay: 0s, $duration * 2
+
+      & + #{$root-node}__text
+        max-width: 0
+
+        white-space: nowrap
+        opacity: 0
+
+  &__text
+    transition-property: color, opacity, max-width
+    transition-duration: $duration, $duration, 0s
+    transition-delay: 0s, 0s, $duration
+    transition-timing-function: $bezierEaseInOut
+
+  &--active
+    color: var(--accent-text-color)
