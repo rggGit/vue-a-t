@@ -10,8 +10,10 @@
       "spanish": "Español",
       "english": "English"
     },
-    "index": {
-      "title": "Index"
+    "sections": {
+      "index": {
+        "title": "Index"
+      }
     }
   }
 }
